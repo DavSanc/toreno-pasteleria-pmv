@@ -1,7 +1,5 @@
 
-body{
-    background: black;
-}
+
 
 
 .ftco-navbar-light{
@@ -104,6 +102,19 @@ body{
     font-size: 20px;
 }
 
+/* *******carousel***** */
 
+.owl-carousel{
+    position: relative;
+}
+
+.owl-carousel .owl-item{
+    opacity: 0.4;
+
+}
+
+.owl-carousel .owl-item.active{
+    opacity: 1;
+}
 
 
