@@ -1,6 +1,6 @@
 // Animation on scroll
 
-Aos.init({
+AOS.init({
     duration : 800,
     easing : "slide",
 
@@ -72,7 +72,7 @@ Aos.init({
     };
     scrollWindow();
 
-$.Sccrollax();
+$.Scrollax();
 
     //carousel
 
@@ -91,10 +91,22 @@ var carousel = function (){
             "<span class = 'ion-ios-arrow-back'></span>",
             "<span class = 'ion-ios-arrow-forward'></span>",
         ],
+        responsive : {
+            0:{
+                items : 1,
+            },
+            600: {
+                items : 1,
+            },
+            1000 : {
+                items : 1,
+            },
+        },
 
-    })
-}
+    });
+};
 
+carousel();
 
 })(jQuery);
 
