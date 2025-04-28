@@ -38,22 +38,28 @@ html{
     color: #ffffff;
 }
 
-.ftco-navbar-light .navbar-nav > .nav-item.cta > a{
+.ftco-navbar-light .navbar-nav > .nav-item.cta > a {
     background: #c8a97e;
     color: #ffffff;
     border-radius: 5px;
 }
 
-.ftco-navbar-light .navbar-nav > .nav-item.active > a{
+.ftco-navbar-light .navbar-nav > .nav-item.active > a {
     color: #c8a97e;
 }
 
+/* *******inserted by me***** */
+.home-slider .owl-nav button:focus {
+    outline: none;
+    box-shadow: none;
+}
+/* *******inserted by me***** */
 
-/* **************this below written code will work when our page content goes more than screen size
- or when it is scrolled*/
+
+/* **************this below written code will work when our page content goes more than screen size or when it is scrolled*/
 
 
-.ftco-navbar-light.scrolled .nav-item.active > a{
+.ftco-navbar-light.scrolled .nav-item.active > a {
     color: #c8a97e !important;
 
 
@@ -91,15 +97,15 @@ html{
     transition: 0.3s all ease-out;
 }
 
-.ftco-navbar-light.scrolled.sleep{
+.ftco-navbar-light.scrolled.sleep {
     transition: 0.3s all ease-out;
 }
 
-.ftco-navbar-light.scrolled .navbar-brand{
-    color: #000000;
+.ftco-navbar-light.scrolled .navbar-brand {
+    color: #000000; 
 }
 
-.navbar-brand{
+.navbar-brand {
     font-weight: 900;
     font-size: 20px;
 }
@@ -110,16 +116,16 @@ html{
     position: relative;
 }
 
-.owl-carousel .owl-item{
+.owl-carousel .owl-item {
     opacity: 0.4;
 
 }
 
-.owl-carousel .owl-item.active{
+.owl-carousel .owl-item.active {
     opacity: 1;
 }
 
-.owl-carousel .owl-nav{
+.owl-carousel .owl-nav {
     position: absolute;
     top: 50%;
     width: 100%;
@@ -227,3 +233,56 @@ html{
 .owl-carousel.home-slider:hover .owl-nav .owl-next{
     right: 20px;
 }
+.owl-custom-nav{
+    float: right;
+    position: relative;
+    z-index: 10;
+
+}
+.owl-carousel-nav .owl-custom-prev,
+.owl-carousel-nav .owl-custom-nav{
+    padding: 10px;
+    font-size: 30px;
+    background-color: #ccc;
+    line-height: 0;
+    width: 60px;
+    text-align: center;
+    display: inline-block;
+
+}
+
+/************featured section************ */
+
+.featured{
+    padding-top: 30px;
+    width: 100%;
+}
+.featured .featured-menus{
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.featured .featured-menus .text {
+    width: 100%;
+}
+.featured .featured-menus .text h3{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.featured .featured-menus .text p{
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.featured .featured-menus .menu-img{
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 50%;
+
+}
+
