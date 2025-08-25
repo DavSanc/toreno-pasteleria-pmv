@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Toreno Pastelería · Panel de Gestión</title>
+  <!--
+    Esta página es una versión extendida del login original de Toreno Pastelería.
+    Tras iniciar sesión con las credenciales de demostración se muestra un panel
+    con tres categorías (Productos, Inventarios y Pedidos). Al hacer clic en
+    cada categoría se listan tres elementos de ejemplo. Esta implementación no
+    requiere backend; toda la lógica vive en el navegador para fines de un
+    Producto Mínimo Viable. Más adelante podrá conectarse con un servidor real.
+  -->
+  <meta name="description" content="PMV de plataforma Toreno Pastelería con panel de categorías." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+
+
+</head>
+<body>
+  <main class="wrap" role="main" aria-labelledby="titulo" id="loginContainer">
+    <header>
+      <div class="logo" aria-hidden="true">T</div>
+      <div>
+        <h1 id="titulo">Toreno Pastelería</h1>
+        <p>Panel · Ingreso seguro</p>
+      </div>
+    </header>
+
+    <div class="notice" role="note">
+      <strong>Demo rápido:</strong> usa <span class="kbd">admin@toreno.co</span> y <span class="kbd">demo123</span> para ingresar.
+      (Validación únicamente en el navegador para el PMV.)
+    </div>
+
+    <div id="status" class="status" aria-live="polite"></div>
+
+    <form id="loginForm" autocomplete="on" novalidate>
+      <label for="email">Correo</label>
+      <input id="email" name="email" type="email" inputmode="email" placeholder="tucorreo@dominio.com" required aria-required="true" />
+
+      <label for="password">Contraseña</label>
+      <div style="position:relative">
+        <input id="password" name="password" type="password" placeholder="••••••••" minlength="6" required aria-required="true" />
+        <button type="button" class="toggle-pass" aria-controls="password" aria-label="Mostrar u ocultar contraseña" style="position:absolute; right:8px; top:8px" onclick="togglePass()">Mostrar</button>
+      </div>
+
+      <div class="row">
+        <div class="left">
+          <input id="remember" class="remember" type="checkbox" />
+          <label for="remember" style="margin:0">Recordarme</label>
+        </div>
+        <a href="#" onclick="alert('Función en construcción para el PMV.'); return false;">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <button class="btn" type="submit">Ingresar</button>
+    </form>
+
+    <p class="create-account">¿No tienes cuenta? <a href="#" id="createAccountLink">Crear usuario nuevo</a></p>
+
+    <div id="registerSection" class="hidden register">
+      <h2>Crea tu cuenta</h2>
+      <form id="registerForm" novalidate>
+        <label for="regName">Nombre completo</label>
+        <label for="regName">Apellido</label>
+        <input id="regName" name="regName" type="text" placeholder="Tu nombre completo" required />
+        <input id="regName" name="regName" type="text" placeholder="Tu apellido" required />
+        <label for="regEmail">Correo</label>
+        <input id="regEmail" name="regEmail" type="email" placeholder="tucorreo@dominio.com" required />
+        <label for="regPass">Contraseña</label>
+        <input id="regPass" name="regPass" type="password" placeholder="••••••••" minlength="6" required />
+        <button class="btn" type="submit">Crear cuenta</button>
+        <button id="cancelRegister" class="btn btn-outline" type="button">Cancelar</button>
+      </form>
+    </div>
+
+    <p class="hint">Este es un PMV <em>estático</em> pensado para GitHub Pages. La validación de acceso es de demostración (lado del cliente). Más adelante se conectará a backend real.</p>
+    <footer>
+      <span>© <span id="year"></span> Toreno Pastelería</span>
+      <a href="#" onclick="openWhatsApp(); return false;" style="color: var(--accent-2); text-decoration:none">Soporte por WhatsApp</a>
+    </footer>
+  </main>
+
+ 
+  <script src="login.js" defer></script>
+
+</body>
+</html>
