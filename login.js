@@ -58,6 +58,20 @@ const togglePassBtn = document.getElementById('togglePassBtn');
 const forgotLink = document.getElementById('forgotLink');
 const waSupport = document.getElementById('waSupport');
 
+// Autorrellenar email (y opcionalmente auto-entrar si marcó "Recordarme")
+(() => {
+  try {
+    const saved = JSON.parse(localStorage.getItem('toreno_demo_user'));
+    if (saved && Date.now() - saved.ts < 7 * 24 * 60 * 60 * 1000) {
+      const emailInput = document.getElementById('email');
+      if (emailInput) emailInput.value = saved.email;
+
+      // Si quieres entrar directo al panel cuando hay sesión recordada, descomenta:
+      // showPanel(saved.name);
+    }
+  } catch (e) {}
+})();
+
 // --- Utilidades UI
 function showStatus(msg, ok = false) {
   if (!msg) {
@@ -74,26 +88,32 @@ function showStatus(msg, ok = false) {
 const isValidEmail = (v) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(String(v).trim());
 
 // --- Toggle contraseña
-togglePassBtn.addEventListener('click', () => {
-  const input = document.getElementById('password');
-  const showing = input.type === 'password';
-  input.type = showing ? 'text' : 'password';
-  togglePassBtn.textContent = showing ? 'Ocultar' : 'Mostrar';
-});
+if (togglePassBtn) {
+  togglePassBtn.addEventListener('click', () => {
+    const input = document.getElementById('password');
+    if (!input) return;
+    const showing = input.type === 'password';
+    input.type = showing ? 'text' : 'password';
+    togglePassBtn.textContent = showing ? 'Ocultar' : 'Mostrar';
+  });
+}
 
-// --- Forgot password (simulado PMV)
-forgotLink.addEventListener('click', (e) => {
-  e.preventDefault();
-  alert('Función en construcción para el PMV.');
-});
+// ========= enlaces auxiliares =========
+if (forgotLink) {
+  forgotLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    alert('Función en construcción para el PMV.');
+  });
+}
 
 // --- WhatsApp soporte
-waSupport.addEventListener('click', (e) => {
-  e.preventDefault();
-  const phone = '573001112233';
-  const text = encodeURIComponent('Hola, necesito ayuda con el acceso al panel.');
-  window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
-});
+if (waSupport) {
+  waSupport.addEventListener('click', (e) => {
+    e.preventDefault();
+    // usa tu función existente
+    openWhatsApp();
+  });
+}
 
 // --- Navegación registro/login
 createAccountLink.addEventListener('click', (e) => {
