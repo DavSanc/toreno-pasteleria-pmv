@@ -41,7 +41,7 @@ const sampleData = {
     { titulo: 'Huevos', descripcion: 'Huevos frescos – 20 docenas.' }
   ],
   pedidos: [
-    { titulo: 'Pedido #001', descripcion: 'Torta de bodas para el 15/08.' },
+    { titulo: 'Pedido #001', descripcion: 'Torta de tres leches para el 15/08.' },
     { titulo: 'Pedido #002', descripcion: 'Docena de cupcakes sabor chocolate.' },
     { titulo: 'Pedido #003', descripcion: 'Cheesecake familiar para entrega el 20/08.' }
   ]
@@ -67,7 +67,7 @@ const waSupport = document.getElementById('waSupport');
       if (emailInput) emailInput.value = saved.email;
 
       // Si quieres entrar directo al panel cuando hay sesión recordada, descomenta:
-      // showPanel(saved.name);
+       showPanel(saved.name);
     }
   } catch (e) {}
 })();
@@ -262,8 +262,8 @@ function showPanel(name) {
   });
 
   panel.querySelector('#btnLogout').addEventListener('click', () => {
-    removeKey(KEYS.SESSION);
-    location.reload();
+  try { localStorage.removeItem('toreno_demo_user'); } catch (e) {}
+  window.location.href = 'index.html'; // si login.html está en otra carpeta, ajusta la ruta
   });
 
   function renderItems(category) {
