@@ -1,0 +1,69 @@
+/* Modal full-screen overlay */
+.toreno-login-modal {
+  position: fixed;
+  inset: 0;
+  display: none;             /* .show -> visible */
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.6);
+  z-index: 1050;
+}
+
+/* Mostrar modal */
+.toreno-login-modal.show { display: flex; }
+
+/* Caja de diálogo */
+.toreno-login-modal .dialog {
+  width: min(440px, 92vw);
+  background: #17181a;
+  color: #e7e9ee;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  overflow: hidden;
+}
+
+/* Cabecera */
+.toreno-login-modal .header {
+  padding: 14px 18px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.toreno-login-modal .title { font-size: 16px; margin: 0; }
+.toreno-login-modal .close-btn {
+  background: transparent; border: 0; color: #a2a8b3; font-size: 20px; cursor: pointer;
+}
+
+/* Cuerpo */
+.toreno-login-modal .body { padding: 18px; }
+.toreno-login-modal label { font-size: 13px; color: #a2a8b3; display:block; margin: 10px 0 6px; }
+.toreno-login-modal input[type="email"],
+.toreno-login-modal input[type="password"]{
+  width: 100%; padding: 10px 12px; border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #1b1c1f; color: #e7e9ee; outline: none; font-size: 14px;
+}
+.toreno-login-modal input:focus{
+  border-color: #c8a97e; box-shadow: 0 0 0 3px rgba(200,169,126,0.18);
+}
+
+.toreno-login-modal .field { position: relative; }
+.toreno-login-modal .toggle-pass {
+  position: absolute; right: 8px; top: 8px; border:0; background:transparent; color:#a2a8b3; cursor:pointer; font-size:12px;
+}
+
+.toreno-login-modal .row {
+  display:flex; align-items:center; justify-content:space-between; margin-top: 10px;
+}
+.toreno-login-modal .remember { width: 16px; height:16px; accent-color:#c8a97e; }
+
+.toreno-login-modal .btn {
+  width: 100%; margin-top: 14px; padding: 11px 14px; border: none; border-radius: 12px; cursor: pointer;
+  background: linear-gradient(180deg, #c8a97e, #9b4b15); color:#111; font-weight:700;
+}
+
+.toreno-login-modal .status {
+  padding: 10px 12px; border-radius: 12px; font-size: 13px; margin: 0 0 10px 0; display:none;
+}
+.toreno-login-modal .status.ok { display:block; background: rgba(40,167,69,0.15); border:1px solid rgba(40,167,69,0.35); color:#b8f5c6; }
+.toreno-login-modal .status.err { display:block; background: rgba(255,77,79,0.12); border:1px solid rgba(255,77,79,0.35); color:#ffd1d2; }
