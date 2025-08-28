@@ -64,7 +64,7 @@
     
          <!-- Botones a la derecha -->
             <div class="d-flex align-items-start gap-2" style="flex-shrink: 0;">
-                <a href="login.html" class="btn" style="position: relative; top: -53px; left: -28px;">Iniciar Sesión</a>
+                <a href="login.html" id="openLoginModal" class="btn" style="position: relative; top: -53px; left: -28px;">Iniciar Sesión</a>
             </div>
   
      
@@ -982,6 +982,41 @@
     <script src="js/jquery.timepicker.min.js"></script>
     <script src="js/scrollax.min.js"></script>
     <script src="main.js"></script>
+      <!-- Modal de inicio de sesión -->
+    <div id="loginModal" class="toreno-login-modal" aria-hidden="true" role="dialog" aria-model="true">
+        <div class="dialog" role="document">
+            <div class="header">
+                <h3 class="title">Ingresar al panel</h3>
+                <button id="closeLoginModal" class="close-btn" aria-label="Cerrar">x</button>
+            </div>
+            <div class="body">
+                <div id="modalStatus" class="status" tabindex="-1" aria-live="polite"></div>
+                <form id="loginModalForm" novalidate>
+                    <label for="m_email">Correo</label>
+                    <input id="m_email" name="email" inputmode="email" autocomplete="email" placeholder="ucorreo@dominio.com" required/>
+
+                    <label for="m_password">Contraseña</label>
+                    <div class="field">
+                        <input id="m_password" name="password" type="password" placeholder="••••••••" minlength="6" required autocomplete="current-password" />
+                        <button type="button" id="m_togglePass" class="toggle-pass" aria-controls="m_password" aria-controls="m_password">Mostrar</button>
+                    </div>
+                    <div class="row">
+                        <div class="left">
+                            <input id="m_remember" class="remember" type="checkbox" />
+                            <label for="m_remember" style="margin: 0;">Recordarme</label>
+                        </div>
+                        <a href="#" id="m_forgot">¿Olvidaste tu contraseña?</a>
+                        <button class="btn" type="submit">Ingresar</button>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 
 </html>
