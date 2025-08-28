@@ -112,3 +112,8 @@ if (form) {
     }, 600);
   });
 }
+// Abrir modal automáticamente si URL tiene #login
+if (location.hash === '#login') {
+  openModal();
+}
+
