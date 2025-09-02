@@ -66,7 +66,7 @@ const waSupport = document.getElementById('waSupport');
       const emailInput = document.getElementById('email');
       if (emailInput) emailInput.value = saved.email;
 
-      // Si quieres entrar directo al panel cuando hay sesión recordada, descomenta:
+      // Si quiere entrar directo al panel cuando hay sesión recordada, descomentar:
        showPanel(saved.name);
     }
   } catch (e) {}

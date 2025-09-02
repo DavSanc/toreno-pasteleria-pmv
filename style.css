@@ -59,7 +59,7 @@ html {
     color: #c8a97e;
   }
   
-  /* ***************this below written code will work when our page content goes more than screen size or when it is scrolled */
+  /* ***************Este cod funciona cuando el contenido de la pagina este en tamaño de pantalla o cuando haga scroll */
   
   .ftco-navbar-light.scrolled .nav-item.active > a {
     color: #c8a97e !important;
@@ -107,7 +107,7 @@ html {
     font-size: 20px;
   }
   
-  /* *********carousel****** */
+  /* *********carrusel****** */
   
   .owl-carousel {
     position: relative;
@@ -246,7 +246,7 @@ html {
     display: inline-block;
   }
   
-  /* *************featured section *************** */
+  /* *************Seccion *************** */
   
   .featured {
     padding-top: 30px;
